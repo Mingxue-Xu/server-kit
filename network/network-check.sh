@@ -15,10 +15,10 @@ do
         for c in $cards
             do
                 ifconfig "$c" down
+                sleep $INTERVAL
                 ifconfig "$c" up
+                sleep $INTERVAL
                 echo "$currentTime restart $c" >> $LOG_PATH
             done
-    else
-        echo "$currentTime is working" >> $LOG_PATH
     fi
 done
